@@ -1,7 +1,7 @@
 [project]
 name = "blender-extension-typechecker-examples"
 version = "0.1.0"
-description = "Add your description here"
+description = "Example Blender extensions that show capabilities of the blender extension typechecker."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []

@@ -1,0 +1,18 @@
+schema_version = "1.0.0"
+
+id = "example_operators"
+version = "1.0.0"
+name = "Example Operators"
+tagline = "This is another extension"
+maintainer = "Example Name"
+type = "add-on"
+
+website = "https://github.com/taway1450/blender-extension-typechecker-examples"
+
+tags = ["3D View", "User Interface"]
+
+blender_version_min = "4.2.0"
+
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
