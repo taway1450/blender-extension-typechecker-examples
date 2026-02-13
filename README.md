@@ -1,2 +1,2 @@
-# blender-extension-typechecker-examples
-Example blender extensions that show capabilities of the blender extension typechecker.
+# Examples
+Example Blender extensions that show capabilities of the blender extension typechecker.
