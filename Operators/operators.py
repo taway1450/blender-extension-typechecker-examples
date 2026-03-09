@@ -78,7 +78,7 @@ class ExampleExtensionOperator2(bpy.types.Operator):
 
 
 class ExampleExtensionOperator3(bpy.types.Operator):
-    bl_idname = "my_extension.example_operator3"
+    bl_idname = "my_extension_unique.example_operator3"
     bl_label = "Example Extension Operator"
     bl_description = "This is an example extension operator"
 

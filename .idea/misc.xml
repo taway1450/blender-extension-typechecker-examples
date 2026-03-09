@@ -3,7 +3,7 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.12" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="uv (Blender Typechecked)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="uv (Blender Typechecked 3.13)" project-jdk-type="Python SDK" />
   <component name="TyConfiguration">
     <option name="enabled" value="true" />
   </component>

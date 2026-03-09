@@ -78,7 +78,7 @@ class ExampleImportedOperator2(bpy.types.Operator):
 
 
 class ExampleImportedOperator3(bpy.types.Operator):
-    bl_idname = "operators_to_import.example_operator3"
+    bl_idname = "operators_to_import_unique.example_operator3"
     bl_label = "Example Imported Operator"
     bl_description = "This is an example imported operator"
 
