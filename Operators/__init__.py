@@ -13,6 +13,9 @@
 
 import bpy
 
+from . import operators
+from .operators_to_import import ExampleImportedOperator
+
 
 class ExampleObjectOperator(bpy.types.Operator):
     bl_idname = "object.example_operator"
@@ -59,6 +62,8 @@ class ExampleFooOperator(bpy.types.Operator):
 def register():
     bpy.utils.register_class(ExampleObjectOperator)
     bpy.utils.register_class(ExampleFooOperator)
+    bpy.utils.register_class(ExampleImportedOperator)
+    bpy.utils.register_class(operators.ExampleExtensionOperator)
 
     # OK
     bpy.ops.object.example_operator()
@@ -72,12 +77,21 @@ def register():
     bpy.ops.object.example_operator("EXEC_DEFAULT", string_property="Custom String", int_property=99)
     bpy.ops.foo.example_operator("EXEC_DEFAULT", string_property="Custom String", int_property=99)
 
+    bpy.ops.my_extension.example_operator("EXEC_DEFAULT")
+    bpy.ops.operators_to_import.example_operator("EXEC_DEFAULT")
+
     # ERRORS
-    bpy.ops.object.nonexistent_operator()
-    bpy.ops.object.example_operator("INVALID_CONTEXT")
-    bpy.ops.object.example_operator("INVOKE_DEFAULT", string_property="Custom String", float_property=99.0)
+    bpy.ops.nonexistent_module.example_operator("INVOKE_DEFAULT") # Try to call operator from nonexistent module
+    bpy.ops.wm.example_operator("INVOKE_DEFAULT") # Try to call operator from nonexistent module
+    bpy.ops.object.nonexistent_operator("INVOKE_DEFAULT") # Try to call nonexistent operator
+
+    bpy.ops.my_extension.example_operator() # Call operator without execution context
+    bpy.ops.object.example_operator("INVALID_CONTEXT") # Execution context only accepts its enum values
+    bpy.ops.object.example_operator("INVOKE_DEFAULT", string_property="Custom String", float_property=99.0) # Nonexistent property
 
 
 def unregister():
     bpy.utils.unregister_class(ExampleObjectOperator)
     bpy.utils.unregister_class(ExampleFooOperator)
+    bpy.utils.unregister_class(ExampleImportedOperator)
+    bpy.utils.unregister_class(operators.ExampleExtensionOperator)

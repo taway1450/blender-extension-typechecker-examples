@@ -14,10 +14,10 @@
 import bpy
 
 
-class ExampleExtensionOperator(bpy.types.Operator):
-    bl_idname = "my_extension.example_operator"
-    bl_label = "Example Extension Operator"
-    bl_description = "This is an example extension operator"
+class ExampleImportedOperator(bpy.types.Operator):
+    bl_idname = "operators_to_import.example_operator"
+    bl_label = "Example Imported Operator"
+    bl_description = "This is an example imported operator"
 
     string_property: bpy.props.StringProperty(name="String Property", default="Hello World")
     int_property: bpy.props.IntProperty(name="Integer Property", default=42)
