@@ -33,3 +33,66 @@ class ExampleExtensionOperator(bpy.types.Operator):
             {'INFO'}, f"Example Object Operator invoked with string: {self.string_property}, int: {self.int_property}"
         )
         return self.execute(context)
+
+
+class ExampleExtensionOperator1(bpy.types.Operator):
+    bl_idname = "my_extension.example_operator1"
+    bl_label = "Example Extension Operator"
+    bl_description = "This is an example extension operator"
+
+    string_property: bpy.props.StringProperty(name="String Property", default="Hello World")
+    int_property: bpy.props.IntProperty(name="Integer Property", default=42)
+
+    def execute(self, context):
+        self.report(
+            {'INFO'}, f"Example Object Operator executed with string: {self.string_property}, int: {self.int_property}"
+        )
+        return {'FINISHED'}
+
+    def invoke(self, context, event):
+        self.report(
+            {'INFO'}, f"Example Object Operator invoked with string: {self.string_property}, int: {self.int_property}"
+        )
+        return self.execute(context)
+
+
+class ExampleExtensionOperator2(bpy.types.Operator):
+    bl_idname = "my_extension.example_operator2"
+    bl_label = "Example Extension Operator"
+    bl_description = "This is an example extension operator"
+
+    string_property: bpy.props.StringProperty(name="String Property", default="Hello World")
+    int_property: bpy.props.IntProperty(name="Integer Property", default=42)
+
+    def execute(self, context):
+        self.report(
+            {'INFO'}, f"Example Object Operator executed with string: {self.string_property}, int: {self.int_property}"
+        )
+        return {'FINISHED'}
+
+    def invoke(self, context, event):
+        self.report(
+            {'INFO'}, f"Example Object Operator invoked with string: {self.string_property}, int: {self.int_property}"
+        )
+        return self.execute(context)
+
+
+class ExampleExtensionOperator3(bpy.types.Operator):
+    bl_idname = "my_extension.example_operator3"
+    bl_label = "Example Extension Operator"
+    bl_description = "This is an example extension operator"
+
+    string_property: bpy.props.StringProperty(name="String Property", default="Hello World")
+    int_property: bpy.props.IntProperty(name="Integer Property", default=42)
+
+    def execute(self, context):
+        self.report(
+            {'INFO'}, f"Example Object Operator executed with string: {self.string_property}, int: {self.int_property}"
+        )
+        return {'FINISHED'}
+
+    def invoke(self, context, event):
+        self.report(
+            {'INFO'}, f"Example Object Operator invoked with string: {self.string_property}, int: {self.int_property}"
+        )
+        return self.execute(context)

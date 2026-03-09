@@ -13,7 +13,13 @@ bpy.ops.object.example_operator("EXEC_DEFAULT", string_property="Custom String",
 bpy.ops.foo.example_operator("EXEC_DEFAULT", string_property="Custom String", int_property=99)
 
 bpy.ops.my_extension.example_operator("EXEC_DEFAULT")
+bpy.ops.my_extension.example_operator1("EXEC_DEFAULT")
+bpy.ops.my_extension.example_operator2("EXEC_DEFAULT")
+bpy.ops.my_extension.example_operator3("EXEC_DEFAULT")
 bpy.ops.operators_to_import.example_operator("EXEC_DEFAULT")
+bpy.ops.operators_to_import.example_operator1("EXEC_DEFAULT")
+bpy.ops.operators_to_import.example_operator2("EXEC_DEFAULT")
+bpy.ops.operators_to_import.example_operator3("EXEC_DEFAULT")
 
 # ERRORS
 bpy.ops.nonexistent_module.example_operator("INVOKE_DEFAULT")  # Try to call operator from nonexistent module

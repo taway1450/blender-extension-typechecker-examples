@@ -33,3 +33,66 @@ class ExampleImportedOperator(bpy.types.Operator):
             {'INFO'}, f"Example Object Operator invoked with string: {self.string_property}, int: {self.int_property}"
         )
         return self.execute(context)
+
+
+class ExampleImportedOperator1(bpy.types.Operator):
+    bl_idname = "operators_to_import.example_operator1"
+    bl_label = "Example Imported Operator"
+    bl_description = "This is an example imported operator"
+
+    string_property: bpy.props.StringProperty(name="String Property", default="Hello World")
+    int_property: bpy.props.IntProperty(name="Integer Property", default=42)
+
+    def execute(self, context):
+        self.report(
+            {'INFO'}, f"Example Object Operator executed with string: {self.string_property}, int: {self.int_property}"
+        )
+        return {'FINISHED'}
+
+    def invoke(self, context, event):
+        self.report(
+            {'INFO'}, f"Example Object Operator invoked with string: {self.string_property}, int: {self.int_property}"
+        )
+        return self.execute(context)
+
+
+class ExampleImportedOperator2(bpy.types.Operator):
+    bl_idname = "operators_to_import.example_operator2"
+    bl_label = "Example Imported Operator"
+    bl_description = "This is an example imported operator"
+
+    string_property: bpy.props.StringProperty(name="String Property", default="Hello World")
+    int_property: bpy.props.IntProperty(name="Integer Property", default=42)
+
+    def execute(self, context):
+        self.report(
+            {'INFO'}, f"Example Object Operator executed with string: {self.string_property}, int: {self.int_property}"
+        )
+        return {'FINISHED'}
+
+    def invoke(self, context, event):
+        self.report(
+            {'INFO'}, f"Example Object Operator invoked with string: {self.string_property}, int: {self.int_property}"
+        )
+        return self.execute(context)
+
+
+class ExampleImportedOperator3(bpy.types.Operator):
+    bl_idname = "operators_to_import.example_operator3"
+    bl_label = "Example Imported Operator"
+    bl_description = "This is an example imported operator"
+
+    string_property: bpy.props.StringProperty(name="String Property", default="Hello World")
+    int_property: bpy.props.IntProperty(name="Integer Property", default=42)
+
+    def execute(self, context):
+        self.report(
+            {'INFO'}, f"Example Object Operator executed with string: {self.string_property}, int: {self.int_property}"
+        )
+        return {'FINISHED'}
+
+    def invoke(self, context, event):
+        self.report(
+            {'INFO'}, f"Example Object Operator invoked with string: {self.string_property}, int: {self.int_property}"
+        )
+        return self.execute(context)

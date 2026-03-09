@@ -14,7 +14,7 @@
 import bpy
 
 from . import operators
-from .operators_to_import import ExampleImportedOperator
+from .operators_to_import import ExampleImportedOperator, ExampleImportedOperator1, ExampleImportedOperator2, ExampleImportedOperator3
 
 
 class ExampleObjectOperator(bpy.types.Operator):
@@ -58,12 +58,23 @@ class ExampleFooOperator(bpy.types.Operator):
         )
         return self.execute(context)
 
+classes = (
+    ExampleImportedOperator1,
+    ExampleImportedOperator2,
+    ExampleImportedOperator3,
+    operators.ExampleExtensionOperator1,
+    operators.ExampleExtensionOperator2,
+    operators.ExampleExtensionOperator3,
+)
 
 def register():
     bpy.utils.register_class(ExampleObjectOperator)
     bpy.utils.register_class(ExampleFooOperator)
     bpy.utils.register_class(ExampleImportedOperator)
     bpy.utils.register_class(operators.ExampleExtensionOperator)
+
+    for cls in classes:
+        bpy.utils.register_class(cls)
 
     # OK
     bpy.ops.object.example_operator()
@@ -78,7 +89,13 @@ def register():
     bpy.ops.foo.example_operator("EXEC_DEFAULT", string_property="Custom String", int_property=99)
 
     bpy.ops.my_extension.example_operator("EXEC_DEFAULT")
+    bpy.ops.my_extension.example_operator1("EXEC_DEFAULT")
+    bpy.ops.my_extension.example_operator2("EXEC_DEFAULT")
+    bpy.ops.my_extension.example_operator3("EXEC_DEFAULT")
     bpy.ops.operators_to_import.example_operator("EXEC_DEFAULT")
+    bpy.ops.operators_to_import.example_operator1("EXEC_DEFAULT")
+    bpy.ops.operators_to_import.example_operator2("EXEC_DEFAULT")
+    bpy.ops.operators_to_import.example_operator3("EXEC_DEFAULT")
 
     # ERRORS
     bpy.ops.nonexistent_module.example_operator("INVOKE_DEFAULT") # Try to call operator from nonexistent module
@@ -91,7 +108,11 @@ def register():
 
 
 def unregister():
+    for cls in reversed(classes):
+        bpy.utils.unregister_class(cls)
+
     bpy.utils.unregister_class(ExampleObjectOperator)
     bpy.utils.unregister_class(ExampleFooOperator)
     bpy.utils.unregister_class(ExampleImportedOperator)
     bpy.utils.unregister_class(operators.ExampleExtensionOperator)
+
